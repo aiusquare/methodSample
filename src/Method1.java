@@ -30,3 +30,7 @@ class cassie {
    
     }
 }
+/**
+ * the hello variable in line number has been initialized and the value has been taked in the executed 
+ * program so how can take the real anser the answer 4 only not 40;
+ */
