@@ -6,18 +6,34 @@ import java.io.*;
 class Inversing{
     
      public static void main(String args[]){
-         Scanner input = new Scanner (System.in);
-      String []message = new String [2];
-      
-      message[1]=input.nextLine();
-             byte[] result = new byte[message.length];
-              for (int i=0;i<message.length-1;i++){
-                  result[i]= message[message.length-i];
-                  
-              }
-        System.out.println((result));
-           
+     System.out.println("Enter a String");
+        Inversing never = new Inversing();
+        never.input();
+        never.saying();
+        never.Reverse();
+         }
+     static  String []input=new String [1];
+     public  String input(){
+       
+         Scanner Input = new Scanner(System.in);
+        input[0] = Input.nextLine();
+         return input[0];
+     }
+     public void Reverse(){
+         String result="";
+         for(int i=input.length-1;i>=0;i--){
+             result= result+(input[i]);
+            System.out.println(result);
+         }
+         
+     }
+     public void saying(){ 
+         System.out.println("The entered String is :"+input[0]);
+
      }
          
      }
+         
+     
 
+    
