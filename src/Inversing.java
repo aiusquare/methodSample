@@ -1,47 +1,31 @@
 import java.util.Scanner;
-import java.util.*;
-import java.lang.*;
-import java.io.*;
 
-class Inversing{
-    
-     public static void main(String args[]){
-    /*
-     * asking the user to input some string
-     */
-     System.out.println("Enter a String");
-        Inversing never = new Inversing();
-        never.input();
-        never.saying();
-        never.Reverse();
-         }
-     static  String []input=new String [1];
-     public  String input(){
-        /*
-     *getting the input string
-     */
-        Scanner Input = new Scanner(System.in);
-        input[0] = Input.nextLine();
-         return input[0];
-     }
-     public void Reverse(){
 
-  /*
-     * Reversing the string
-     */
-      String result="";
-         for(int i=input.length-1;i>=0;i--){
-             result= result+(input[i]);
-            System.out.println(result);
-         }
-         
+class Inversing {
+     public static void main (String args [])
+{
+          System.out.println ("Enter a string");
+          Scanner words =new Scanner(System.in);
+          String User = words.nextLine ();
+          
+          System.out.println ("the entered String is:   "+User);
+          /*
+           * Declaring the method
+           */
+          System.out.printf("the inverse string is: ");
+          Inversing.inverse(User);
      }
-     public void saying(){ 
-         System.out.println("The entered String is :"+input[0]);
+     
+     public static String inverse (String result){
+          char [] Speak= new char [result.length()];
+          for (int i= result.length() -1;i>=0;i--)
+          {
+               System.out.print (result.charAt(i));
+          }
+          return result;
+     }
+}
 
-     }
-         
-     }
          
      
 
