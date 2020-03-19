@@ -149,7 +149,9 @@ return equivalent;
     public static int TotalScore(int TotalScore1,int TotalScore2,int TotalScore3,int TotalScore4,int TotalScore5){
 Tally = TotalScore1;
   
-  
+  /*
+Sir check this out
+*/
          
  
   return Tally;
