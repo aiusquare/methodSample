@@ -16,6 +16,7 @@ import java.util.*;
         */
         String Score = "";
         int unit=0;
+        int Power=0;
        
         GPA_Computing.S(Score);
         
