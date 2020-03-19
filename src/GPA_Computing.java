@@ -16,16 +16,24 @@ import java.util.*;
         */
         String Score = "";
         int unit=0;
-        int Power;
+       
         GPA_Computing.S(Score);
-        GPA_Computing.unit(unit);
         
-        GPA_Computing.Computing(Power);
+       GPA_Computing.unit(unit);
+
+       
+        
+        GPA_Computing.tally();
+         
     }
+    
+    private static final String Score[] = new String [7];
+
     public static String S(String score){
-        String Score[] = new String [7];
+       
         
         Scanner Students =new Scanner (System.in);
+       
         /*
         Entering Score Field
         
@@ -39,51 +47,115 @@ import java.util.*;
         /*
         Showing entered score in a list
         */
-        for(String list :Score){
+       
+        for(String  list :Score){
             Arrays.asList(list);
-           
-            System.out.println("List of Score: "+list);
+            System.out.println("\nList of Score: "+list);
+            equivalent(list); 
         }
         
         return score;
     }
+    
+    static int Un;
+  
     public static int unit(int unit){
         /*
        Entering Unit field
         */
         Scanner Student = new Scanner(System.in);
-        int Unit []= new int [7];
-        for(int Un =0;Un<Unit.length;Un++){
+        int UnitTotal []= new int [7];
+       
+        for(  Un =0;Un<7;Un++){
+            System.out.println("");
             System.out.print("Enter how many Unit: ");
-            Unit[Un]= Student.nextInt();
+            UnitTotal[Un]= Student.nextInt();
         }
+     
           /*
       List of Unit entered Field
         */
-          int List;
-        for(List=1;List <=Unit.length;List++){
+          
+        int sum=0;
+        
+        for( int List :UnitTotal){
             Arrays.asList(List);
+            sum=sum+=List;
             System.out.println("The list of entered Unit is :"+List);
-            
-        }Computing(List);
+        }Computing(sum);
+        
+      
         
         
-        return List;
+        return sum;
+    }
+    private static int total;
+    public static int Computing(int Power){
+        total = Power;
+       System.out.println("Sum of total is "+total);
+     
+       return Power;
     }
     
-    public static int Computing(int Power){
-        int total = Power +=Power;
-   System.out.print(total);
-       return total;
+    private static String scoreEq;
+    private static int uno,dos,tres,kwatro,betlog;
+    public static String equivalent(String equivalent){
+       scoreEq= equivalent;{
+        /*
+       Equivalent of  Score
+       */
+        switch(scoreEq){
+           case "A":
+                System.out.printf("The Equivalent of %s Score is :",scoreEq);
+              kwatro=4;
+               System.out.print(kwatro);
+               
+               break;
+           case "B":
+              
+                System.out.printf("The Equivalent of %s Score is :",scoreEq);
+                tres =3;
+                System.out.print(tres);
+           
+                break;
+           case "C":
+                System.out.printf("The Equivalent of %s Score is :",scoreEq);
+                dos=2;
+                System.out.print(dos);
+                break;
+           case "D":
+                System.out.printf("The Equivalent of %s Score is :",scoreEq);
+                uno =1;
+                System.out.print(uno);
+                break;
+           case"E":
+                System.out.printf("The Equivalent of %s Score is :",scoreEq);
+                betlog=0;
+                System.out.print(betlog);
+                break;
+           case "F":
+               System.out.print("Out of lsit");
+               break;
+           case "G":
+               System.out.print("Out of list");
+               break;
+       }TotalScore(uno,dos,tres,kwatro,betlog);
+ 
+return equivalent;
     }
-    public void saying(){
-      
     }
+
+    private static int Tally;
+    public static int TotalScore(int TotalScore1,int TotalScore2,int TotalScore3,int TotalScore4,int TotalScore5){
+Tally = TotalScore1;
+  
+  
+         
+ 
+  return Tally;
 }
-class main{
-  public static void main(String args[]){
-      GPA_Computing Total = new GPA_Computing();
-      Total.Front();
-     
+
+public static void tally (){
+     System.out.println("hello"+Tally);
 }
 }
