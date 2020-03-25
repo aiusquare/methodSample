@@ -16,8 +16,9 @@ import java.util.Scanner;
         */
     
     }
-   static int[] scores= new int[7];
+
     public int[] score(){
+     int[] scores= new int[7];
         Scanner scoreInput =new Scanner (System.in);
      
         String[] grades = new String [7];
