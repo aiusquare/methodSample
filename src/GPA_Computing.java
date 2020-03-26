@@ -9,7 +9,7 @@ import java.util.Scanner;
         Process is starting
         */
         int Units = 0;
-        GPA_Computing Complete = new GPA_Computing();
+        GPA_Computing complete = new GPA_Computing();
         compute(score(),getCreaditUnit()); 
         /*
         getting the final result 
@@ -57,8 +57,8 @@ import java.util.Scanner;
     }
    
     public void compute(int[] score, int[] crdUnit){
-       double gpa =0;
-       int LastTotal=0;
+       float gpa =0;
+       float LastTotal=0;
        int TotalUnit=0;
        for(int j=0;j<score.length;j++){
 
