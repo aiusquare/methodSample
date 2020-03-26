@@ -136,7 +136,10 @@ import java.util.Scanner;
                 break;
            case "F":
                point=0;
-               break;
+           /*
+           * dito nauuwi ang lahat ng binuo niyo
+              */
+               break;//ito yon hahaha
           }
           return point;
       }
