@@ -48,6 +48,9 @@ import java.util.Scanner;
         for(int i =0;i<creaditUnits.length;i++){
              System.out.print("\n");
              System.out.print("Enter the credtit unit :");
+             /*
+             hello
+             */
               
            creaditUnits[i] = creaditUInput.nextInt();
      
