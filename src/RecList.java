@@ -52,7 +52,7 @@ public class RecList extends ArrayList {
     }
       public static RecList getInstance(){
           
-          File file = new File("Rec.txt");
+          File file = new File("Rec.itm");
           File file2 = file.getAbsoluteFile();
           if (file2.exists()&& (file2)!= null){
               try {
@@ -73,7 +73,7 @@ public class RecList extends ArrayList {
       public void saved(RecList list){
             try {
                    
-			FileOutputStream out=new FileOutputStream("Rec.txt");
+			FileOutputStream out=new FileOutputStream("Rec.itm");
 			ObjectOutputStream oos=new ObjectOutputStream(out);
 			oos.writeObject(list);
 			oos.close();
