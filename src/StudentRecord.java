@@ -8,6 +8,7 @@
  * @author Default
  */
 import java.io.Serializable;
+import java.util.*;
 
 public class StudentRecord implements Serializable{
     String nameSt;
@@ -25,26 +26,31 @@ public class StudentRecord implements Serializable{
      * and since normal array is not dynamic we will 
      * be using arraylist object to hold it
      */
-    ArrayList<double> gpas;
-    ArrayList<double> cgpas;
+    private ArrayList gpas;
+    private ArrayList cgpas;
     String courseSt;
     int ageSt;
     int yearSt;
  
     //i remove totalGPAST from the constructor
     public StudentRecord (String name,int age,String course,int year){
-        gpas=new ArrayList<double>();
-        cgpas=new ArrayList<double>();
+        gpas=new ArrayList();
+        cgpas=new ArrayList();
         nameSt = name;
         ageSt= age;
         courseSt= course;
-        yearSt= year;
+        yearSt= year;
+    }
+    
+    public StudentRecord(){
+    	gpas=new ArrayList();
+        cgpas=new ArrayList();
     }
     
     // i created a method to retrieve the gpa
-    public double getGPA(int session){
+    public double getGPA(int semester){
         double gpa=0d;
-        gpa=gpas.get(yearSt);
+        gpa=(double)gpas.get(semester);
         return gpa;
     }
     

@@ -21,40 +21,40 @@ public class RecList extends ArrayList {
         super();
     }
     
-    // changed the method name to small letter
+    // changed the method name to lower case letter
     public void registerStudent(){
         InputStreamReader input = new InputStreamReader(System.in);
         BufferedReader inputStreamReader = new BufferedReader(input);
-        StudentRecord obj = new StudentRecord();
-      try{
-          
-        System.out.print("Enter Name: ");
-        obj.nameSt=inputStreamReader.readLine(); 
-        System.out.print("Enter Age : ");
-        obj.ageSt=inputStreamReader.read();
-        System.out.print("Enter Course:");
-        obj.courseSt= inputStreamReader.readLine();
-        System.out.print("Enter Year level : ");
-        obj.yearSt=inputStreamReader.read();
-          
-        /**********************************/
-        // let us leave GPA during registration
-        
-        //System.out.print("Enter GPA :");
-        //obj.totalGPAST=inputStreamReader.read();
-        
-        System.out.println("");
-        System.out.println("End of Fill in ");
-      }catch(IOException e){
-          e.printStackTrace();
-      }
-      add(obj);
-      System.out.println("Added");
-      /**
-       * Saying that Successfully Added to the new RecordList
-       * 
-       */
-    }
+        StudentRecord std = new StudentRecord();
+	      try{
+	        System.out.print("Enter Name: ");
+	        std.nameSt=inputStreamReader.readLine(); 
+	        System.out.print("Enter Age : ");
+	        std.ageSt=inputStreamReader.read();
+	        System.out.print("Enter Course: ");
+	        std.courseSt= inputStreamReader.readLine();
+	        System.out.print("Enter Year level : ");
+	        std.yearSt=inputStreamReader.read();
+	          
+	        /******************************************************************/
+	        // let us leave GPA during registration
+	        
+	        //System.out.print("Enter GPA :");
+	        //obj.totalGPAST=inputStreamReader.read();
+	        
+	        System.out.println("");
+	        System.out.println("End of File in ");
+	      }catch(IOException e){
+	          e.printStackTrace();
+	      }
+	      add(std);
+	      saved(this); // saving automatically
+	      System.out.println("Added");
+	      /**
+	       * Saying that Successfully Added to the new RecordList
+	       * 
+	       */
+    	}
       public static RecList getInstance(){
           
           File file = new File("Rec.itm");
@@ -75,6 +75,7 @@ public class RecList extends ArrayList {
           
           return recList;
       }
+      
       public void saved(RecList list){
             try {
                    
