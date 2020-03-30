@@ -11,20 +11,18 @@ import java.io.Serializable;
 
 public class StudentRecord implements Serializable{
     String nameSt;
-    double totalGPAST;
     String courseSt;
     int ageSt;
+    double totalGPAST;   
     int yearSt;
  
-    public StudentRecord (String name,int age,String course,int year,double totalGPA){
-        
+    public StudentRecord (String name,int year,String course,double totalGPA,int age){
+       
         nameSt = name;
-        ageSt= age;
+        yearSt = year;
         courseSt= course;
-        yearSt= year;
         totalGPAST= totalGPA;
-    
-        
+        ageSt=age;
     }
     public StudentRecord(){
     

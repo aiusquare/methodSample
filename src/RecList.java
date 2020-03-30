@@ -23,26 +23,22 @@ public class RecList extends ArrayList {
     
     public void RegisterStudent(){
         InputStreamReader input = new InputStreamReader(System.in);
-        BufferedReader inputStreamReader = new BufferedReader(input);
-        StudentRecord obj = new StudentRecord();
-      try{
-          
-        System.out.print("Enter Name:");
-        obj.nameSt=inputStreamReader.readLine(); 
-          System.out.print("Enter Age :");
-        obj.ageSt=inputStreamReader.read();
-        System.out.print("Enter Course:");
-        obj.courseSt= inputStreamReader.readLine();
-          System.out.print("Enter Year level :");
-        obj.yearSt=inputStreamReader.read();
-          System.out.print("Enter GPA :");
-        obj.totalGPAST=inputStreamReader.read();
         
-        System.out.println("");
+        Scanner inputStreamReader=new Scanner(input);
+        StudentRecord obj = new StudentRecord();
+     
+        System.out.println("Enter Student Name:");
+        obj.nameSt=inputStreamReader.nextLine();
+        System.out.println("Enter Course :");
+        obj.courseSt=inputStreamReader.nextLine();
+        System.out.println("Enter Age :");
+        obj.ageSt=inputStreamReader.nextInt();
+        System.out.println("Enter Total GPA :");
+        obj.totalGPAST=inputStreamReader.nextDouble();
+        System.out.println("Enter Year Level :");
+        obj.yearSt=inputStreamReader.nextInt();
         System.out.println("End of Fill in ");
-      }catch(IOException e){
-          e.printStackTrace();
-      }
+    
       add(obj);
       System.out.println("Added");
       /**

@@ -38,16 +38,21 @@ public class Main extends GPA_Computing {
             case "comCGPA":
                 break;
             case "Stats":
+                
                 try{
                 System.out.print("Enter your name :");
                 String name =action.readLine();
                 recordList =RecList.getInstance();
-                for (int i = 0; i < recordList.size();i++){
+                for (int i = 0; i <recordList.size();i++){
                     StudentRecord sr =(StudentRecord)recordList.get(i);
+                    
                     if (sr.nameSt.equalsIgnoreCase(name)){
-                        System.out.println("Name is :"+sr.nameSt);
-                        System.out.println("Course is :"+sr.courseSt);
-                        System.out.println("Gpa is "+sr.totalGPAST);
+                       
+                        System.out.println("Student Name is :"+sr.nameSt);
+                        System.out.println("Student Course is :"+sr.courseSt);
+                        System.out.println("Student Year Level"+sr.yearSt);
+                        System.out.println("Student Age is :"+sr.ageSt);
+                        System.out.println("Student GPA is :"+sr.totalGPAST);
                         
                     }
                 }

@@ -62,7 +62,6 @@ import java.util.Scanner;
        float gpa =0;
        float LastTotal=0;
        int totalUnit=0;
-       
        float totalPoint=0;
 
        // i am optimising the code here
