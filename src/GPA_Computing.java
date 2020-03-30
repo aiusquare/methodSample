@@ -9,15 +9,19 @@ import java.util.Scanner;
         Process is starting
         */
         int Units = 0;
-        GPA_Computing Complete = new GPA_Computing();
+  
+        //there is no need of creating object here because 
+        // the class has no custom constructor and we call call the methods directly
+        //GPA_Computing complete = new GPA_Computing();
         compute(score(),getCreaditUnit()); 
         /*
         getting the final result 
         */
     
     }
-   static int[] scores= new int[7];
+
     public int[] score(){
+     int[] scores= new int[7];
         Scanner scoreInput =new Scanner (System.in);
      
         String[] grades = new String [7];
@@ -43,26 +47,26 @@ import java.util.Scanner;
    
     public int[] getCreaditUnit(){
         Scanner creaditUInput =new Scanner(System.in);
-          int creaditUnits[]=new int[7];
+        int creaditUnits[]=new int[7];
           
         for(int i =0;i<creaditUnits.length;i++){
-             System.out.print("\n");
-             System.out.print("Enter the credtit unit :");
-             /*
-             hello
-             */
+            System.out.print("\n");
+            System.out.print("Enter the credit unit :");
               
            creaditUnits[i] = creaditUInput.nextInt();
-     
         }   
         return creaditUnits;
     }
    
     public void compute(int[] score, int[] crdUnit){
-       double gpa =0;
-       int LastTotal=0;
-       int TotalUnit=0;
-       for(int j=0;j<score.length;j++){
+       float gpa =0;
+       float LastTotal=0;
+       int totalUnit=0;
+       
+       float totalPoint=0;
+
+       // i am optimising the code here
+       /*for(int j=0;j<score.length;j++){
 
            System.out.println("The score points: "+score[j]);
        }
@@ -71,26 +75,48 @@ import java.util.Scanner;
            
            System.out.println("The credit units: "+crdUnit[i]);
            
+       }*/
+  
+       for(int i=0;i<score.length;i++){
+           System.out.println("The score points: "+score[i]);
+           System.out.println("It's corresponding credit units: "+crdUnit[i]);
        }
+  
        /*
-       The final computation for getting the gpa result...
+         * The final computation for getting the gpa result...
+         *in working with array you have think very critically how to make it automatic
+         * using loop. your code serves right and out the correct result but in reality there is one big job ahead
+         * what is the array holds more than on thousand elements do that means we have to call it one by one using its index number as you did
+         * so that's the issue.
        */
-       for(int totalUnit =0; totalUnit<crdUnit.length;totalUnit++){
-           TotalUnit += crdUnit [totalUnit];
+  
+       // i changed the looping variable because if it is complex it will add us programming time that is why mostly i is used for that 
+       for(int i=0; i<crdUnit.length;i++){
+           totalPoint +=score[i]*crdUnit[i];
+           totalUnit += crdUnit[i];
+           /*TotalUnit += crdUnit [totalUnit];
            for (int totalScore = 0;totalScore<score.length;totalScore++){
               LastTotal = crdUnit[0]*score[0]+crdUnit[1]*score[1]+crdUnit[2]*score[2]+crdUnit[3]*score[3]+crdUnit[4]*score[4]+crdUnit[5]*score[5]+crdUnit[6]*score[6];
-            
-           }
-       }gpa= LastTotal/TotalUnit;
+            }*/
+       }
+  
+       gpa= totalPoint/totalUnit;
        System.out.println("The total gpa is: "+gpa);
+    
        /*
        end of Computing
        */
     }
     
-static int point=0;
+    /*
+     * this variable supposed to be local to equivalent method
+     * because its value is returned by the function so there is no need to make it instance
+     * 
+    static int point=0;
+    */
     public int equivalent(String gradePoint){
-        
+        // here is it
+        int point=0;
         /*
        Equivalent of  Score
        */
@@ -112,10 +138,11 @@ static int point=0;
                 break;
            case "F":
                point=0;
-               break;
+           /*
+           * dito nauuwi ang lahat ng binuo niyo
+              */
+               break;//ito yon hahaha
           }
           return point;
       }
-    
-
     }
