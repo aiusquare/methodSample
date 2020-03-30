@@ -64,6 +64,7 @@ import java.util.Scanner;
        int totalUnit=0;
        
        float totalPoint=0;
+
        // i am optimising the code here
        /*for(int j=0;j<score.length;j++){
 
@@ -101,6 +102,7 @@ import java.util.Scanner;
   
        gpa= totalPoint/totalUnit;
        System.out.println("The total gpa is: "+gpa);
+    
        /*
        end of Computing
        */
@@ -136,7 +138,10 @@ import java.util.Scanner;
                 break;
            case "F":
                point=0;
-               break;
+           /*
+           * dito nauuwi ang lahat ng binuo niyo
+              */
+               break;//ito yon hahaha
           }
           return point;
       }
