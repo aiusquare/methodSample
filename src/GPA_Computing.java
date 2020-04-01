@@ -54,7 +54,7 @@ import java.util.Scanner;
             System.out.print("Enter the credit unit :");
               
            creaditUnits[i] = creaditUInput.nextInt();
-        }   
+        }   //hello
         return creaditUnits;
     }
    
