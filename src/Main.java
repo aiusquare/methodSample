@@ -1,3 +1,4 @@
+
   /*
 
 *Main class method  
@@ -12,7 +13,7 @@ public class Main extends GPA_Computing {
         BufferedReader action =new BufferedReader(new InputStreamReader(System.in));
         
         String choose;
-        System.out.println("Register -type (reg) || Compute GPA- type (comGPA) || Compute CGPA- type (comCGPA) || Status- type (Stats)\n\n");
+        System.out.println("Register -type (reg) || Compute GPA- type (comGPA) || Compute CGPA- type (comCGPA) || Status- type (stats)\n\n");
         System.out.print("Choose Action to Perform :");
         choose = action.readLine();
         switch (choose){
@@ -20,40 +21,55 @@ public class Main extends GPA_Computing {
                 System.out.println("Register Faster");
                 String ctrl="";
                 while(!ctrl.equalsIgnoreCase("save")){
-                    recordList.RegisterStudent();
-                System.out.print("Enter Save to end Registration : ");
-                try{
-                    ctrl=action.readLine();
-                    
-                }catch(IOException e){
-                    e.printStackTrace();
+                    recordList.registerStudent();
+                    System.out.print("Enter Save to end Registration : ");
+	                try{
+	                    ctrl=action.readLine();
+	                }catch(IOException e){
+	                    e.printStackTrace();
+	                }
                 }
-                }
-                recordList.saved(recordList);
+                //recordList.saved(recordList);
                 System.out.println("Record Saved!");
                 break;
             case "comGPA":
-                gpaComputer.front();
+            	/*
+            	 * GPA is computed but not saved so i created the a way by which GPA will be saved automatically 
+            	 */
+          
+            	 try{
+                     System.out.print("Enter the student name :");
+                     String name =action.readLine();
+                     recordList =RecList.getInstance();
+                     for (int i = 0; i < recordList.size();i++){
+                         StudentRecord sr =(StudentRecord)recordList.get(i);
+                         if (sr.nameSt.equalsIgnoreCase(name)){
+                        	 sr.setGPA(gpaComputer.front());
+                        	 recordList.remove(i); // i remove the element so that we wont have duplicate
+                        	 recordList.add(sr); // adding the object back to the list
+                        	 recordList.saved(recordList);
+                        	 break;
+                         }
+                     }
+                 }catch (IOException e){
+                      e.printStackTrace();
+                 }
+            	
                 break;
             case "comCGPA":
                 break;
-            case "Stats":
-                
+            case "stats":
                 try{
                 System.out.print("Enter your name :");
                 String name =action.readLine();
                 recordList =RecList.getInstance();
-                for (int i = 0; i <recordList.size();i++){
+                for (int i = 0; i < recordList.size();i++){
                     StudentRecord sr =(StudentRecord)recordList.get(i);
-                    
                     if (sr.nameSt.equalsIgnoreCase(name)){
-                       
-                        System.out.println("Student Name is :"+sr.nameSt);
-                        System.out.println("Student Course is :"+sr.courseSt);
-                        System.out.println("Student Year Level"+sr.yearSt);
-                        System.out.println("Student Age is :"+sr.ageSt);
-                        System.out.println("Student GPA is :"+sr.totalGPAST);
-                        
+                        System.out.println("Name is :"+sr.nameSt);
+                        System.out.println("Course is :"+sr.courseSt);
+                        System.out.println("Gpa is "+sr.getGPA(0));
+                        break;
                     }
                 }
                 }catch (IOException e){
@@ -62,12 +78,8 @@ public class Main extends GPA_Computing {
                 break;
             default:
                 System.out.println("Enter or Choose the following above!!");
-        }
-     
-         
-    }
-    public void registerStudents(){
-        
+        }    
     }
 }
-   
+
+             

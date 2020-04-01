@@ -2,22 +2,24 @@ import java.util.Scanner;
 
  class GPA_Computing {
     
-    public void front(){
+    public double front(){
+    	double gpa=0d;
         System.out.println("GPA Computing System");
         System.out.println("The Program Starts!");
         /*
         Process is starting
         */
-        int Units = 0;
   
         //there is no need of creating object here because 
         // the class has no custom constructor and we call call the methods directly
         //GPA_Computing complete = new GPA_Computing();
-        compute(score(),getCreaditUnit()); 
+     
         /*
         getting the final result 
         */
-    
+        gpa=compute(score(),getCreaditUnit());
+        System.out.println("The total gpa is: "+gpa); 
+        return gpa;
     }
 
     public int[] score(){
@@ -58,7 +60,7 @@ import java.util.Scanner;
         return creaditUnits;
     }
    
-    public void compute(int[] score, int[] crdUnit){
+    public double compute(int[] score, int[] crdUnit){
        float gpa =0;
        float LastTotal=0;
        int totalUnit=0;
@@ -100,11 +102,11 @@ import java.util.Scanner;
        }
   
        gpa= totalPoint/totalUnit;
-       System.out.println("The total gpa is: "+gpa);
-    
        /*
        end of Computing
        */
+       
+       return gpa;
     }
     
     /*
