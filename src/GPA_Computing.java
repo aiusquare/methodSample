@@ -3,7 +3,7 @@ import java.util.Scanner;
  class GPA_Computing {
     
     public double front(){
-    	double gpa=0d;
+    	double gpa=0;
         System.out.println("GPA Computing System");
         System.out.println("The Program Starts!");
         /*
