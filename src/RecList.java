@@ -4,7 +4,7 @@
  * @author Default
  */
 
-import java.io.BufferedReader;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -23,19 +23,21 @@ public class RecList extends ArrayList {
     }
     
     // changed the method name to lower case letter
+    //sorry for the Uppercase i always forget about that
     public void registerStudent(){
         InputStreamReader input = new InputStreamReader(System.in);
-        BufferedReader inputStreamReader = new BufferedReader(input);
+        
+       Scanner inputStreamReader = new Scanner (input);
         StudentRecord std = new StudentRecord();
-	      try{
+	  
 	        System.out.print("Enter Name: ");
-	        std.nameSt=inputStreamReader.readLine(); 
+	        std.nameSt=inputStreamReader.next(); 
 	        System.out.print("Enter Age : ");
-	        std.ageSt=inputStreamReader.read();
+	        std.ageSt=inputStreamReader.nextInt();
 	        System.out.print("Enter Course: ");
-	        std.courseSt= inputStreamReader.readLine();
+	        std.courseSt= inputStreamReader.next();
 	        System.out.print("Enter Year level : ");
-	        std.yearSt=inputStreamReader.read();
+	        std.yearSt=inputStreamReader.nextInt();
 	          
 	        /******************************************************************/
 	        // let us leave GPA during registration
@@ -45,9 +47,7 @@ public class RecList extends ArrayList {
 	        
 	        System.out.println("");
 	        System.out.println("End of File in ");
-	      }catch(IOException e){
-	          e.printStackTrace();
-	      }
+	
 	      add(std);
 	      saved(this); // saving automatically
 	      System.out.println("Added");
@@ -87,7 +87,7 @@ public class RecList extends ArrayList {
 			out.close();
             }catch(SecurityException|IOException e)
             {
-                e.printStackTrace();
+                e.printStackTrace();//Drink coffee now!
             }
     }
 }

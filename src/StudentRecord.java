@@ -27,8 +27,8 @@ public class StudentRecord implements Serializable{
      * and since normal array is not dynamic we will 
      * be using arraylist object to hold it
      */
-    private ArrayList gpas;
-    private ArrayList cgpas;
+    private final ArrayList gpas;
+    private final ArrayList cgpas;
     String courseSt;
     int ageSt;
     int yearSt;
@@ -50,12 +50,20 @@ public class StudentRecord implements Serializable{
     
     // i created a method to retrieve the gpa
     public double getGPA(int semester){
-        double gpa=0d;
+        double gpa=0;
         gpa=(double)gpas.get(semester);
         return gpa;
     }
     
     public void setGPA(double gpa){
         gpas.add(gpa);
+    }
+    public double getCGPA(int semester){
+        double cgpa=0;
+        cgpa=(double)cgpas.get(semester);
+        return cgpa;
+    }
+    public void setCGPA(double cgpa){
+        cgpas.add(cgpa);
     }
 }

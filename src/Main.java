@@ -9,6 +9,7 @@ import java.io.*;
 public class Main extends GPA_Computing {
     public static void main(String args[])throws IOException {
         GPA_Computing gpaComputer = new GPA_Computing();
+        Cgpa obj1 =new Cgpa();
         RecList recordList =RecList.getInstance();
         BufferedReader action =new BufferedReader(new InputStreamReader(System.in));
         
@@ -57,6 +58,22 @@ public class Main extends GPA_Computing {
             	
                 break;
             case "comCGPA":
+                
+                try {
+                    System.out.println("Enter the Student name :");
+                    String name = action.readLine();
+                    recordList=RecList.getInstance();
+                    for (int i=0; i <recordList.size();i++){
+                        StudentRecord sr  = (StudentRecord)recordList.get(i);
+                        if(sr.nameSt.equalsIgnoreCase(name)){
+                            sr.setCGPA(obj1.frontPage());
+                            recordList.remove(i);
+                            recordList.add(sr);
+                            recordList.saved(recordList);
+                            
+                        }
+                    }
+                }catch(IOException e){}
                 break;
             case "stats":
                 try{
@@ -68,7 +85,8 @@ public class Main extends GPA_Computing {
                     if (sr.nameSt.equalsIgnoreCase(name)){
                         System.out.println("Name is :"+sr.nameSt);
                         System.out.println("Course is :"+sr.courseSt);
-                        System.out.println("Gpa is "+sr.getGPA(0));
+                        System.out.println("Gpa is :"+sr.getGPA(0));
+                        System.out.println("Cgpa is :"+sr.getCGPA(0));
                         break;
                     }
                 }
